@@ -42,6 +42,7 @@ int main(){
         perror("error in sem_unlink");
     }
     mutex1 = sem_open("m1", O_CREAT, 0644, 1);
+    // "m1" -> name of semaphore, "O_CREAT" -> create semaphore, if exists then use that, "0644" -> perms for semaphore, "1" -> initial value of semaphore
     mutex2 = sem_open("m2", O_CREAT, 0644, 0);
     if (mutex1 == SEM_FAILED || mutex2 == SEM_FAILED){
         perror("error in sem_open");
